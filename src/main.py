@@ -12,10 +12,10 @@ dir_path_content = "./content"
 template_path = "./template.html"
 
 def main():
-    basepath = sys.argv[0]
-    if basepath:
+    basepath = sys.argv[1]
+    if basepath is None:
         basepath = '/'
-    print('Deleting public directory... ')
+    print(f'Deleting {dir_path_public} directory... ')
     if os.path.exists(dir_path_public):
         shutil.rmtree(dir_path_public)
     else:
